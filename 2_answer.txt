@@ -1,0 +1,82 @@
+const { Readable, Transform } = require('stream');
+
+// Assume the signal method is provided and imported
+function signal(event, data) {
+  console.log(`signal('${event}', '${data}')`);
+}
+
+// Create the createReadableStream function
+function createReadableStream(input) {
+  if (typeof input !== 'string' || input.length === 0) {
+    throw new Error('Invalid input: it should be a non-empty string');
+  }
+
+  const charactersSeen = new Set();
+  let index = 0;
+
+  const readableStream = new Readable({
+    read() {
+      if (index >= input.length) {
+        this.push(null); // End the stream
+      } else {
+        const chunk = input[index++];
+        this.push(chunk);
+
+        // Check if it's a duplicate or a new character
+        if (charactersSeen.has(chunk)) {
+          signal('duplicate', chunk);
+        } else {
+          signal('received', chunk);
+          charactersSeen.add(chunk);
+        }
+      }
+    }
+  });
+
+  return readableStream;
+}
+
+// Create the createTransformStream function
+function createTransformStream() {
+  return new Transform({
+    transform(chunk, encoding, callback) {
+      const char = chunk.toString();
+
+      // Check if it's an alphabetic character
+      if (/[a-zA-Z]/.test(char)) {
+        const upperChar = char.toUpperCase();
+        signal('transform', upperChar);
+        callback(null, upperChar); // Pass the transformed character to the next stream
+      } else {
+        signal('invalid', char);
+        callback(null); // Skip non-alphabetic characters
+      }
+    }
+  });
+}
+
+// Create the createStreamablePipeline function
+function createStreamablePipeline(input) {
+  const readableStream = createReadableStream(input);
+  const transformStream = createTransformStream();
+
+  readableStream.pipe(transformStream);
+
+  return {
+    readableStream,
+    transformStream
+  };
+}
+
+// Example usage:
+
+// Example 1: createReadableStream
+const readable = createReadableStream('AbCd');
+readable.push('d');  // Simulate pushing new data
+readable.push('a');  // Simulate pushing new data
+readable.push('A');  // Simulate pushing new data
+
+// Example 2: createStreamablePipeline
+const { readableStream, transformStream } = createStreamablePipeline('abc');
+readableStream.push('a');  // Pushing a letter
+readableStream.push('1');  // Pushing a non-alphabetic character

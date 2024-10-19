@@ -1,0 +1,98 @@
+The rotation information in a 4x4 transformation matrix is encoded within the top-left 3x3 part of the matrix, specifically in \(m0\) to \(m10\). This 3x3 matrix defines how an object is rotated around the X, Y, and Z axes.
+
+Here’s a more detailed breakdown:
+
+### Rotation in 3D:
+Rotation in 3D space can occur around the **X**, **Y**, or **Z** axis. The 3x3 portion of the 4x4 matrix represents a combination of these rotations.
+
+### Matrix Layout for Rotation:
+\[
+\begin{pmatrix}
+m0 & m1 & m2 & - \\
+m4 & m5 & m6 & - \\
+m8 & m9 & m10 & - \\
+- & - & - & -
+\end{pmatrix}
+\]
+This 3x3 section can be viewed as encoding the rotation of the object around the X, Y, and Z axes. Here's what each part typically represents:
+
+1. **Rotation Around the X-Axis**: Affects the **Y** and **Z** coordinates of the object.
+   - \(m0\), \(m4\), and \(m8\) control how much the object is rotated around the X-axis.
+
+2. **Rotation Around the Y-Axis**: Affects the **X** and **Z** coordinates of the object.
+   - \(m1\), \(m5\), and \(m9\) control how much the object is rotated around the Y-axis.
+
+3. **Rotation Around the Z-Axis**: Affects the **X** and **Y** coordinates of the object.
+   - \(m2\), \(m6\), and \(m10\) control how much the object is rotated around the Z-axis.
+
+#### Specific Breakdown of Rotation:
+- \(m0, m4, m8\): Control how the object is rotated around the X-axis.
+- \(m1, m5, m9\): Control how the object is rotated around the Y-axis.
+- \(m2, m6, m10\): Control how the object is rotated around the Z-axis.
+
+Each of these matrix elements forms a part of the **rotation matrix**. The complete rotation in 3D can be represented as a product of three separate rotations around the X, Y, and Z axes.
+
+### Rotation Matrices:
+- **Rotation Around X-axis** (Angle: \(\theta_x\)):
+  \[
+  \begin{pmatrix}
+  1 & 0 & 0 \\
+  0 & \cos(\theta_x) & -\sin(\theta_x) \\
+  0 & \sin(\theta_x) & \cos(\theta_x)
+  \end{pmatrix}
+  \]
+- **Rotation Around Y-axis** (Angle: \(\theta_y\)):
+  \[
+  \begin{pmatrix}
+  \cos(\theta_y) & 0 & \sin(\theta_y) \\
+  0 & 1 & 0 \\
+  -\sin(\theta_y) & 0 & \cos(\theta_y)
+  \end{pmatrix}
+  \]
+- **Rotation Around Z-axis** (Angle: \(\theta_z\)):
+  \[
+  \begin{pmatrix}
+  \cos(\theta_z) & -\sin(\theta_z) & 0 \\
+  \sin(\theta_z) & \cos(\theta_z) & 0 \\
+  0 & 0 & 1
+  \end{pmatrix}
+  \]
+
+### Example from Tooth 2:
+
+For **Tooth 2**, the relevant rotation elements are:
+\[
+\begin{pmatrix}
+0.239 & 0.954 & 0.179 \\
+-0.968 & 0.219 & 0.122 \\
+0.077 & -0.203 & 0.976
+\end{pmatrix}
+\]
+
+Here’s how this breaks down:
+- **X-axis rotation** is controlled by \(m0 = 0.239\), \(m4 = -0.968\), \(m8 = 0.077\)
+- **Y-axis rotation** is controlled by \(m1 = 0.954\), \(m5 = 0.219\), \(m9 = -0.203\)
+- **Z-axis rotation** is controlled by \(m2 = 0.179\), \(m6 = 0.122\), \(m10 = 0.976\)
+
+This matrix encodes a complex combination of rotations around all three axes.
+
+### Extracting Rotation Angles:
+If you need to calculate the actual rotation angles (\(\theta_x\), \(\theta_y\), \(\theta_z\)) from this matrix, the following formulas are typically used:
+
+1. **Rotation around Y-axis** (\(\theta_y\)):
+   \[
+   \theta_y = \arcsin(-m8)
+   \]
+2. **Rotation around X-axis** (\(\theta_x\)) (once \(\theta_y\) is known):
+   \[
+   \theta_x = \arctan2(m9, m10)
+   \]
+3. **Rotation around Z-axis** (\(\theta_z\)) (once \(\theta_y\) is known):
+   \[
+   \theta_z = \arctan2(m4, m0)
+   \]
+
+### Summary:
+- **m0 to m10** control how the object (tooth) is rotated around the X, Y, and Z axes.
+- Each axis has a set of three matrix elements that determine the object's rotation around that axis.
+- Translating these matrix values into actual rotation angles involves using trigonometric functions, as described above.

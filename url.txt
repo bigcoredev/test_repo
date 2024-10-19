@@ -1,0 +1,101 @@
+
+https://www.nocodeinstitute.io/post/job-search-sites-in-europe
+
+https://skillcrush.com/blog/sites-finding-remote-work/#1
+
+https://skillcrush.com/blog/sites-finding-remote-work/#3
+
+
+
+Here are the URLs for the sites I mentioned:
+
+LinkedIn: https://www.linkedin.com/jobs/remote-jobs
+Indeed: https://www.indeed.com/q-Remote-jobs.html
+Glassdoor: https://www.glassdoor.com/Job/remote-jobs-SRCH_KO0,6.htm
+Remote OK: https://remoteok.com/
+We Work Remotely: https://weworkremotely.com/
+AngelList: https://angel.co/jobs
+FlexJobs: https://www.flexjobs.com/
+Upwork: https://www.upwork.com/
+Toptal: https://www.toptal.com/
+Freelancer: https://www.freelancer.com/
+Stack Overflow Jobs: https://stackoverflow.com/jobs
+GitHub Jobs: https://github.com/about/jobs
+HackerRank Jobs: https://www.hackerrank.com/jobs
+TechCareers: https://www.techcareers.com/
+European Freelancers Week: https://www.europeanfreelancersweek.org/
+Remote Europe: https://remote-europe.com/
+Reddit (r/remotejs): https://www.reddit.com/r/remotejs/
+Meetup: https://www.meetup.com/
+https://parknav.com/careers
+https://10up.com/careers/
+https://apply.workable.com/whitespectre/j/F0E6C00655/
+
+https://www.dice.com/jobs?q=web&location=Remote,%20OR,%20USA&latitude=43.00594549999999&longitude=-123.8925908&countryCode=US&locationPrecision=City&radius=100&radiusUnit=mi&page=1&pageSize=20&filters.postedDate=SEVEN&filters.workplaceTypes=Remote&filters.employmentType=CONTRACTS%7CFULLTIME%7CPARTTIME&filters.employerType=Direct%20Hire&filters.easyApply=true&language=en
+https://job-boards.greenhouse.io/xapo61/jobs/6112655003
+
+https://remote.com/jobs/remote-c19vyacj/it-operations-engineer-j1sb4r5m
+
+https://startup.jobs/website-manager-all-genders-lingoda-2-5805409
+
+https://startup.jobs/web-developer-status-5836490
+https://startup.jobs/startups
+
+https://remoteafrica.io/jobs/f/storetasker-senior-shopify-developer-remote-flexible-3
+
+
+https://remoteafrica.io/jobs/f/go-proxify-492650
+https://remoteafrica.io/jobs/f/xm-senior-php-web-developers-2
+https://remoteafrica.io/jobs/f/bbe-marketing-inc-full-stack-wordpress-developer-13
+https://remoteafrica.io/jobs/f/go-gurufield-469505
+https://remoteafrica.io/jobs/f/interaction-design-foundation-ixdf-senior-php-laravel-developer-1
+
+https://remoteafrica.io/jobs/f/a-team-senior-independent-software-developer-90-170-hr
+https://jobs.ashbyhq.com/witnessai/c89e59bf-65b1-45d3-bd1d-d3e175ab6040?utm_source=remoteafrica.io&utm_medium=web&campaign=hunter&ref=remoteafrica.io
+https://jobs.lever.co/formstack/0a8cb43e-1e05-480c-8b3e-84fb5645204e
+
+linkedIn broker
+@ashraful78c
+@Asif_bro_is_here
+
+Getting a 100% remote job at a startup without a background check can be a challenge, but you can improve your chances by targeting the right kind of companies and using specific strategies. Here's a step-by-step approach to help you in your search:
+
+1. Target Smaller Startups
+Early-Stage Startups: These companies are often focused on growth and may not have established background check processes. You can find these through platforms like:
+AngelList (now Wellfound): Popular for startup job listings.
+LinkedIn: Use advanced filters to target small, early-stage startups.
+Startup directories: Explore directories like Crunchbase or TechCrunch to find smaller startups.
+
+3. Networking
+Join startup communities like:
+Indie Hackers
+Product Hunt
+Startup Grind
+Participate in discussions, connect with startup founders, and inquire about opportunities. Founders in these communities often hire based on trust and skill demonstration rather than formal background checks.
+
+
+
+d397d-40131
+5f935-11f7a
+2c110-ffdcc
+39b70-df678
+81aaf-7d5af
+28886-b131e
+1308e-b7487
+
+tallinn university maps : https://www.google.com/maps/place/Tallinn+University/@59.438252,24.7702705,18z/data=!4m7!3m6!1s0x4692935c7ed21b5b:0x34ce7211e853036f!4b1!8m2!3d59.4387321!4d24.7713836!16zL20vMGMzajl4?entry=ttu&g_ep=EgoyMDI0MDgyMS4wIKXMDSoASAFQAw%3D%3D
+
+
+Certainly! Here are the URLs to the free resources where you can learn Python for full-stack web development:
+
+1. **freeCodeCamp** - [freeCodeCamp Python Curriculum](https://www.freecodecamp.org/)
+2. **Codecademy** - [Codecademy Python Basics](https://www.codecademy.com/learn/learn-python-3) (Free Tier)
+3. **Coursera** - [Coursera Free Python Courses](https://www.coursera.org/courses?query=python&price=free)
+4. **edX** - [edX Python Courses](https://www.edx.org/learn/python) (Audit for Free)
+5. **Kaggle Learn** - [Kaggle Python](https://www.kaggle.com/learn/python)
+6. **Real Python** - [Real Python Tutorials](https://realpython.com/)
+7. **The Odin Project** - [The Odin Project: Full Stack Ruby on Rails and JavaScript](https://www.theodinproject.com/)
+8. **W3Schools** - [W3Schools Python Tutorial](https://www.w3schools.com/python/)
+9. **Mozilla Developer Network (MDN)** - [MDN Web Docs: Server-side Programming with Python](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
+
+These links should help you get started on your journey to becoming a full-stack web developer with Python.

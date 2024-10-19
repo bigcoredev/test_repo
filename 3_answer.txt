@@ -1,0 +1,68 @@
+function typeCheck(obj) {
+  return new Proxy(obj, {
+    set(target, property, value) {
+      // Determine the expected type based on the property name suffix
+      if (property.endsWith('_int')) {
+        if (!Number.isInteger(value)) {
+          throw new Error(`Property ${property} must be an integer`);
+        }
+      } else if (property.endsWith('_string')) {
+        if (typeof value !== 'string') {
+          throw new Error(`Property ${property} must be a string`);
+        }
+      } else if (property.endsWith('_float')) {
+        if (typeof value !== 'number' || Number.isInteger(value)) {
+          throw new Error(`Property ${property} must be a float`);
+        }
+      } else if (property.endsWith('_bool')) {
+        if (typeof value !== 'boolean') {
+          throw new Error(`Property ${property} must be a boolean`);
+        }
+      } else if (property.endsWith('_number')) {
+        if (typeof value !== 'number') {
+          throw new Error(`Property ${property} must be a number`);
+        }
+      }
+
+      // If validation passes, set the value
+      target[property] = value;
+      return true;
+    }
+  });
+}
+
+// Example usage
+const obj = {
+  age_int: 2,
+  name_string: 'Adam',
+  job: null,
+};
+
+const validatingObject = typeCheck(obj);
+
+// These are valid:
+validatingObject.age_int = 2; // Valid
+validatingObject.job = 'fireman'; // Valid (no validation on job)
+
+// These will throw errors:
+try {
+  validatingObject.age_int = 2.25; // Throws error: age_int must be an integer
+} catch (e) {
+  console.error(e.message);
+}
+
+try {
+  validatingObject.address_string = 20; // Throws error: address_string must be a string
+} catch (e) {
+  console.error(e.message);
+}
+
+const obj_2 = {
+  employed_bool: "true",
+};
+
+try {
+  const validatingObject2 = typeCheck(obj_2); // Throws error on creation because employed_bool is not a boolean
+} catch (e) {
+  console.error(e.message);
+}

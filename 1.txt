@@ -1,0 +1,53 @@
+// Import the required libraries
+const axios = require('axios');
+
+// BASE_URL variable (assumed to be provided elsewhere in your environment)
+const BASE_URL = 'https://mocked-api-url.com';  // Use your actual mocked API URL
+
+// Define the cityWeather function as an asynchronous function
+async function cityWeather(city) {
+    // Check if the input is not a string
+    if (typeof city !== 'string') {
+        throw new Error('not a string');
+    }
+
+    // Check if the input string is empty
+    if (city.trim() === '') {
+        throw new Error('string is empty');
+    }
+
+    // Build the full URL for the API request
+    const url = `${BASE_URL}?q=${city.trim().toLowerCase()}`;  // Ensure the city is in lowercase
+
+    try {
+        // Make the API request
+        const response = await axios.get(url);
+
+        // Extract the weather data from the API response
+        const weatherData = response.data.main;
+
+        // Return the weather data object
+        return {
+            temp: weatherData.temp,
+            feels_like: weatherData.feels_like,
+            temp_min: weatherData.temp_min,
+            temp_max: weatherData.temp_max,
+            pressure: weatherData.pressure,
+            humidity: weatherData.humidity,
+        };
+
+    } catch (error) {
+        // If the error is a 404 (city not found), throw a specific error
+        if (error.response && error.response.status === 404) {
+            throw new Error('city not found');
+        }
+
+        // Re-throw the error for any other error cases
+        throw error;
+    }
+}
+
+// Example Usage:
+cityWeather('Bogota')
+    .then(data => console.log(data))
+    .catch(err => console.error(err.message));
